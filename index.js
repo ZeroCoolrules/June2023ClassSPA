@@ -86,7 +86,7 @@ router.hooks({
 
 router
   .on({
-    "/": () => render(store.Bio),
+    "/": () => render(store.Home),
     ":view": params => {
       let view = capitalize(params.data.view);
       if (store.hasOwnProperty(view)) {
