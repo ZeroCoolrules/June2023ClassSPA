@@ -66,7 +66,9 @@ router.hooks({
         // axios
         //   .get(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
 
-        fetch(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
+        // fetch(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
+        fetch(`https://sc-pizza-api.onrender.com/pizzas
+        `)
           .then(response => {
             store.Pizza.pizzas = response.data;
             done();
