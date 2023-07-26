@@ -63,8 +63,10 @@ router.hooks({
         break;
       // Added in Lesson 7.1
       case "Pizza":
-        axios
-          .get(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
+        // axios
+        //   .get(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
+
+        fetch(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
           .then(response => {
             store.Pizza.pizzas = response.data;
             done();
