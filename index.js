@@ -36,14 +36,10 @@ router.hooks({
     // Add a switch case statement to handle multiple routes
     switch (view) {
       case "Home":
-        // axios
-
-        // .get(
-        //   `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
-        // )
-        fetch(
-          `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
-        )
+        axios
+          .get(
+            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
+          )
           .then(response => {
             const kelvinToFahrenheit = kelvinTemp =>
               Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
@@ -63,12 +59,8 @@ router.hooks({
         break;
       // Added in Lesson 7.1
       case "Pizza":
-        // axios
-        //   .get(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
-
-        // fetch(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
-        fetch(`https://sc-pizza-api.onrender.com/pizzas
-        `)
+        axios
+          .get(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
           .then(response => {
             store.Pizza.pizzas = response.data;
             done();
